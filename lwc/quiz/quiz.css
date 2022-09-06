@@ -1,0 +1,30 @@
+.questions{
+    width: 100%;
+}
+
+.quiz-block{
+   width: 600px; 
+}
+
+.br {
+    display: block;
+    margin: 7px 0;
+ }
+
+ .left_button{
+    position: absolute;
+    left:    0;
+    bottom:   0;
+ }
+
+ .right_button{
+    position: absolute;
+    right:    0;
+    bottom:   0;
+ }
+
+ .Question_title{
+    font-size:25px;
+    font-weight: bold;
+    text-align: center;
+ }

@@ -1,0 +1,55 @@
+<template>
+<template if:true={areQUizVisible}>
+  <div class="slds-float_left">
+    <lightning-card>
+      <p class="Question_title">Question</p>
+      <div style="font-size: 15px;text-align:right;"><strong>Time left: </strong>{timeVal}</div>
+      <div class="slds-m-around_medium quiz-block">
+        <template for:each={questionsToDisplay} for:item="quiz">
+          <div key={quiz.Id} class="slds-m-bottom_medium">
+            <div>
+              <strong>
+                {currentId} :- {quiz.question}
+              </strong>
+            </div>
+            <span class="br"></span>
+                <div class="slds-col">
+                     <!-- <input type="radio" name="option" value={option.Name} onchange={handleRadioChange} />
+                    &nbsp; <label>{option.Name} </label>  -->
+                    <lightning-radio-group name="radioGroup" options={optionForEachQuest} value={value} onchange={handleRadioChange} type="radio">
+                    </lightning-radio-group>
+                </div>
+          </div>
+        </template>
+
+        <div class=" slds-m-top_x-small">
+          <p class="slds-m-right_small">
+            <strong>Question {currentId} of {lastId}</strong>
+          </p><br>
+        </div>
+        <span class="br"></span>
+        <lightning-progress-bar size="medium" value={progress} title="Question" variant="circular">
+        </lightning-progress-bar>
+
+        <div class="slds-grid slds-grid_align-center">
+          <lightning-button label="&laquo; Previous" variant="brand-outline"
+            class="slds-m-right_small slds-col slds-m-around_medium left_button" disabled={disablePrev}
+            onclick={handlePrev} style="font-family: sans-serif;"></lightning-button>
+          <div class="slds-col slds-m-around_medium">
+            <button class="slds-button slds-button_brand" disabled={disableSubmit} onclick={submitQuiz}>Submit</button>
+          </div>
+          <div class="slds-col slds-m-around_medium">
+            <button class="slds-button slds-button_brand" onclick={handleResetAll}>Reset</button>
+          </div>
+          <lightning-button label="Next &raquo;" variant="brand-outline"
+            class="slds-m-right_small slds-col slds-m-around_medium right_button" disabled={disableNext}
+            onclick={handleNext} style="font-family: sans-serif;"></lightning-button>
+        </div>
+      </div>
+    </lightning-card>
+  </div>
+</template>
+<template if:true={areResultVisible}>
+  <c-quiz-Result marksobtained={marks} total={totalMarks} class="quizResult"></c-quiz-Result>
+</template>
+</template>

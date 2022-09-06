@@ -1,0 +1,38 @@
+<template>
+  <article class="slds-card">
+    <div class="slds-grid slds-einstein-header slds-card__header">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+        <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-4 slds-medium-size_2-of-3">
+          <div class="slds-media__body">
+            <h2 class="slds-truncate" title="FISERV">
+                <span class="slds-text-heading_large"><img class="Logo" src={FiserLogo} alt="fiservlogo"></span> 
+            </h2>
+          </div>
+        </div>
+        <div class="slds-einstein-header__figure slds-size_1-of-4 slds-medium-size_1-of-3"></div>
+      </header>
+    </div> <br>
+    <template if:true={areDetailsVisibleForLogin}>
+      <div class="slds-card__body slds-card__body_inner slds-align_absolute-center set-width"><br><br>
+        <lightning-layout-item padding="around-small" size="8" medium-device-size="6" large-device-size="6">
+          <lightning-input name="firstName" class="validate" type="text" label="First Name"></lightning-input><br>
+          <lightning-input name="lastName" class="validate" type="text" label="Last Name"></lightning-input><br>
+          <lightning-input name="email" class="validate" type="email" label="Email" onchange={handleKeyChange}
+            pattern="[A-Za-z0-9._-]+@[a-z0-9-]+\.[a-z]{2,}$" message-when-pattern-mismatch="Please enter a valid email"
+            required></lightning-input><br>
+          <lightning-input name="phone" class="validate" type="tel" label="Phone" maxlength="10"
+            onchange={handleKeyChange} pattern="[0-9]{10}$"
+            message-when-pattern-mismatch="Please enter a valid phone number" required></lightning-input><br><br>
+          <lightning-button class="slds-align_absolute-center" variant="Brand" label="Next" onclick={saveOnClick}>
+          </lightning-button>
+        </lightning-layout-item>
+      </div>
+    </template>
+    <div class="slds-card__body slds-card__body_inner slds-align_absolute-center"><br><br>
+      <template if:true={areDetailsVisibleForDeceleration}>
+        <c-deceleration class="deceleration"></c-deceleration>
+      </template>
+    </div>
+    <br>
+  </article>
+</template>

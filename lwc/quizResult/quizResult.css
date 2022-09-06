@@ -1,0 +1,15 @@
+h1{
+    font-size: 200%;
+}
+
+h2{
+    font-size: 125%;
+    color: darkgreen;
+    font-family: Georgia, serif;
+}
+
+h3{
+    font-size: 125%;
+    color: rgb(255, 140, 0);
+    margin-top: 110%;
+}

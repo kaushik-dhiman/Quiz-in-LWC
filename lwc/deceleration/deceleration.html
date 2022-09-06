@@ -1,0 +1,30 @@
+<template>
+  <template if:true={areDetailsVisibleForDeceleration}>
+    <div class="slds-card__body slds-card__body_inner slds-align_absolute-center set-width slds-box slds-theme_shade"><br><br>
+      <p class="pp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+        molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+        numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+        optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+        obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+        nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+        tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
+        quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos
+        sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
+        recusandae alias error harum maxime adipisci amet laborum. Perspiciatis
+        minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit
+        quibusdam sed amet tempora. Sit laborum ab, eius fugit doloribus tenetur
+        fugiat, temporibus enim commodi iusto libero magni deleniti quod quam
+        consequuntur!</p>
+    </div>
+    <strong>
+      <lightning-input onchange={check} data-name="Check" class="checkbox" type="checkbox"
+        label="I have read and agree to the terms presented in the Terms and Conditions agreement"> </lightning-input>
+    </strong>
+    <lightning-button data-name="myButtonName" class="slds-align_absolute-center" disabled={Button} variant="Brand"
+      label="Next" type="submit" onclick={handleChange}></lightning-button><br>
+    <br>
+  </template>
+  <template if:true={areDetailsVisibleForQuiz}>
+    <c-quiz class="quiz"></c-quiz>
+  </template>
+</template>
